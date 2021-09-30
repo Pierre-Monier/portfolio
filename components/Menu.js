@@ -1,82 +1,70 @@
 import {
   HeaderContainer,
   Header,
+  HeaderNavigation,
   HeaderMenuButton,
-  HeaderName,
+  HeaderMenuItem,
   SkipToContent,
   SideNav,
-  SideNavItems,
-  SideNavLink,
-  SideNavMenu,
-  SideNavMenuItem,
-  SideNavDivider,
-  Fade16,
-  Button,
+  HeaderGlobalBar,
+  HeaderGlobalAction,
+  HeaderSideNavItems,
 } from "carbon-components-react";
-import {
-  Add16,
-  Email16,
-  LogoGithub16,
-  LogoTwitter16,
-  SkillLevelAdvanced16,
-  LinuxAlt32,
-  Download32,
-  Idea32,
-  LogoDiscord32,
-  LogoLinkedIn32,
-  Asleep32,
-  Awake32,
-  Education32,
-} from "@carbon/icons-react";
+import { Awake24, Asleep24 } from "@carbon/icons-react";
+import { useCallback, useEffect, useState } from "react";
 
-const Menu = () => (
-  <HeaderContainer
-    render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-      <>
-        <Header aria-label="todo">
-          <SkipToContent />
-          <HeaderMenuButton
-            aria-label="Open menu"
-            onClick={onClickSideNavExpand}
-            isActive={isSideNavExpanded}
-          />
-          <HeaderName href="#" prefix="TOTO">
-            [Platform]
-          </HeaderName>
-          <SideNav aria-label="Side navigation" expanded={isSideNavExpanded}>
-            <SideNavItems>
-              <div>
-                <h3>Pierre Monier</h3>
-                <img style={{ height: "400px" }} src="./profile.jpeg" alt="" />
-                <div>
-                  <Button hasIconOnly>
-                    <Add16 />
-                  </Button>
-                  <Button hasIconOnly>
-                    <Add16 />
-                  </Button>
-                </div>
-              </div>
-              <SideNavDivider />
-              <SideNavLink>A propos</SideNavLink>
-              <SideNavLink renderIcon={SkillLevelAdvanced16}>
-                Compétences
-              </SideNavLink>
-              <SideNavLink>Presentation</SideNavLink>
-              <SideNavLink>Parcours</SideNavLink>
-              <SideNavLink>Extras</SideNavLink>
-              <SideNavLink renderIcon={Email16}>Contact</SideNavLink>
-              <SideNavDivider />
-              <SideNavLink renderIcon={LogoGithub16}>Github</SideNavLink>
-              <SideNavLink renderIcon={LogoTwitter16}>Twitter</SideNavLink>
-              <SideNavLink renderIcon={LogoGithub16}>Stackoverflow</SideNavLink>
-              <SideNavDivider />
-            </SideNavItems>
-          </SideNav>
-        </Header>
-      </>
-    )}
-  />
-);
+const Menu = () => {
+  const [theme, setTheme] = useState("g90");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = useCallback(
+    (currentTheme) => (currentTheme === "g90" ? "g10" : "g90"),
+    []
+  );
+
+  return (
+    <HeaderContainer
+      render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+        <>
+          <Header aria-label="header" className="header">
+            <SkipToContent />
+            <HeaderMenuButton
+              aria-label="Open menu"
+              onClick={onClickSideNavExpand}
+              isActive={isSideNavExpanded}
+            />
+            <HeaderNavigation
+              aria-label="navigation"
+              aria-labelledby="navigation"
+            >
+              <HeaderMenuItem href="#">About Me</HeaderMenuItem>
+              <HeaderMenuItem href="#">Projects</HeaderMenuItem>
+              <HeaderMenuItem href="#">Contact</HeaderMenuItem>
+            </HeaderNavigation>
+            <HeaderGlobalBar>
+              <HeaderGlobalAction
+                aria-label="theme switcher"
+                onClick={() => setTheme(toggleTheme(theme))}
+              >
+                {theme === "g90" ? <Awake24 /> : <Asleep24 />}
+              </HeaderGlobalAction>
+            </HeaderGlobalBar>
+
+            <SideNav aria-label="Side navigation" expanded={isSideNavExpanded}>
+              <HeaderSideNavItems hasDivider={true}>
+                <HeaderMenuItem href="#">About Me</HeaderMenuItem>
+                <HeaderMenuItem href="#">Projects</HeaderMenuItem>
+                <HeaderMenuItem href="#">Contact</HeaderMenuItem>
+              </HeaderSideNavItems>
+            </SideNav>
+          </Header>
+        </>
+      )}
+    />
+  );
+};
 
 export default Menu;

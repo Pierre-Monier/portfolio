@@ -1,0 +1,17 @@
+li {
+  display: block;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 9000;
+  min-width: 100%;
+}
+
+@media (min-width: 1056px) {
+  .footer,
+  .header {
+    padding: 0% 25%;
+  }
+}
