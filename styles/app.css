@@ -7,11 +7,26 @@ li {
   bottom: 0;
   z-index: 9000;
   min-width: 100%;
+  display: flex;
+}
+
+.footer-items {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.footer-item {
+  margin: 0 1rem;
 }
 
 @media (min-width: 1056px) {
   .footer,
   .header {
     padding: 0% 25%;
+  }
+
+  .sidenav {
+    display: none;
   }
 }

@@ -53,7 +53,11 @@ const Menu = () => {
               </HeaderGlobalAction>
             </HeaderGlobalBar>
 
-            <SideNav aria-label="Side navigation" expanded={isSideNavExpanded}>
+            <SideNav
+              className="sidenav"
+              aria-label="Side navigation"
+              expanded={isSideNavExpanded}
+            >
               <HeaderSideNavItems hasDivider={true}>
                 <HeaderMenuItem href="#">About Me</HeaderMenuItem>
                 <HeaderMenuItem href="#">Projects</HeaderMenuItem>
