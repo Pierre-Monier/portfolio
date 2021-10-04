@@ -1,8 +1,18 @@
 import "../styles/carbon.css";
 import "../styles/app.css";
+import "../styles/sidenav-hack.css";
+
+import Menu from "../components/Menu";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Menu />
+      <Component {...pageProps} />
+      <Footer />
+    </>
+  );
 }
 
 export default MyApp;

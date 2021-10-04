@@ -59,9 +59,9 @@ const Menu = () => {
               expanded={isSideNavExpanded}
             >
               <HeaderSideNavItems hasDivider={true}>
-                <HeaderMenuItem href="#">About Me</HeaderMenuItem>
-                <HeaderMenuItem href="#">Projects</HeaderMenuItem>
-                <HeaderMenuItem href="#">Contact</HeaderMenuItem>
+                <HeaderMenuItem href="/">About Me</HeaderMenuItem>
+                <HeaderMenuItem href="/projects">Projects</HeaderMenuItem>
+                <HeaderMenuItem href="/contact">Contact</HeaderMenuItem>
               </HeaderSideNavItems>
             </SideNav>
           </Header>

@@ -2,10 +2,25 @@ li {
   display: block;
 }
 
+.content {
+  margin: 6em 0;
+}
+
+.content-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-item {
+  margin: 1.5em;
+}
+
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   z-index: 9000;
+  height: 6em;
   min-width: 100%;
   display: flex;
 }
@@ -14,6 +29,7 @@ li {
   min-height: 100%;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer-item {
@@ -28,5 +44,11 @@ li {
 
   .sidenav {
     display: none;
+  }
+
+  .content {
+    min-width: auto;
+    margin-left: 25%;
+    margin-right: 25%;
   }
 }

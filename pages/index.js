@@ -1,11 +1,5 @@
-import Menu from "../components/Menu";
-import Footer from "../components/Footer";
+import AboutMe from "../components/AboutMe";
 
 export default function Home() {
-  return (
-    <>
-      <Menu />
-      <Footer />
-    </>
-  );
+  return <AboutMe />;
 }
