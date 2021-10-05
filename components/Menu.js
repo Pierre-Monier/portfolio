@@ -30,7 +30,6 @@ const Menu = () => {
       render={({ isSideNavExpanded, onClickSideNavExpand }) => (
         <>
           <Header aria-label="header" className="header">
-            <SkipToContent />
             <HeaderMenuButton
               aria-label="Open menu"
               onClick={onClickSideNavExpand}
@@ -40,9 +39,9 @@ const Menu = () => {
               aria-label="navigation"
               aria-labelledby="navigation"
             >
-              <HeaderMenuItem href="#">About Me</HeaderMenuItem>
-              <HeaderMenuItem href="#">Projects</HeaderMenuItem>
-              <HeaderMenuItem href="#">Contact</HeaderMenuItem>
+              <HeaderMenuItem href="/">About Me</HeaderMenuItem>
+              <HeaderMenuItem href="/projects">Projects</HeaderMenuItem>
+              <HeaderMenuItem href="/contact">Contact</HeaderMenuItem>
             </HeaderNavigation>
             <HeaderGlobalBar>
               <HeaderGlobalAction
