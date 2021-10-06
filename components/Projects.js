@@ -1,44 +1,28 @@
-import { Tile, Loading } from "carbon-components-react";
-import { useCallback, useEffect, useState } from "react";
+import { Tile } from "carbon-components-react";
+import Image from "next/image";
 
-const Projects = () => {
-  const [projects, setProjects] = useState(undefined);
-
-  const fetchData = useCallback(async () => {
-    const data = await fetch("./projects.json");
-    const { projects } = await data.json();
-    setProjects(projects);
-  }, [setProjects]);
-
-  useEffect(() => {
-    console.log("useEffect");
-    fetchData();
-  }, []);
-
-  if (projects) {
-    return (
-      <Tile className="content">
-        <div className="content-items justify-content-center">
-          {projects.map((project) => (
-            <div
-              className="content-item projects-item"
-              onClick={() => (window.location = project.link)}
-            >
-              <img
-                className="projects-thumbnail"
-                src={project.thumbnail}
-                alt={project.title}
-              />
-              <h5>{project.title}</h5>
-              <p>{project.detail}</p>
-            </div>
-          ))}
+const Projects = ({ projects }) => (
+  <Tile className="content">
+    <div className="content-items justify-content-center">
+      {projects.map((project, i) => (
+        <div
+          key={i}
+          className="content-item projects-item"
+          onClick={() => (window.location = project.link)}
+        >
+          <Image
+            className="projects-thumbnail"
+            src={project.thumbnail}
+            width={640}
+            height={320}
+            alt={project.title}
+          />
+          <h5>{project.title}</h5>
+          <p>{project.detail}</p>
         </div>
-      </Tile>
-    );
-  } else {
-    return <Loading />;
-  }
-};
+      ))}
+    </div>
+  </Tile>
+);
 
 export default Projects;
