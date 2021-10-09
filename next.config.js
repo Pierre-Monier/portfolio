@@ -1,5 +1,4 @@
-export const basePath =
-  process.env.NODE_ENV === "production" ? "/portfolio" : "";
+const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
 
 module.exports = {
   reactStrictMode: true,

@@ -11,8 +11,7 @@ import {
   HeaderSideNavItems,
 } from "carbon-components-react";
 import { Awake24, Asleep24 } from "@carbon/icons-react";
-import { useCallback, useEffect, useState } from "react";
-import { basePath } from "../next.config";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 const Menu = () => {
   const [theme, setTheme] = useState("g90");
@@ -23,6 +22,11 @@ const Menu = () => {
 
   const toggleTheme = useCallback(
     (currentTheme) => (currentTheme === "g90" ? "g10" : "g90"),
+    []
+  );
+
+  const basePath = useMemo(
+    () => (process.env.NODE_ENV === "production" ? "/portfolio" : ""),
     []
   );
 
