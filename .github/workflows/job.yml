@@ -14,8 +14,7 @@ jobs:
 
       - name: Build
         run: |
-          npm -v
-          npm i
+          npm ci
           npm run build
 
       - name: Deploy
