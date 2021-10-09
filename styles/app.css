@@ -40,6 +40,11 @@ li {
   cursor: pointer;
 }
 
+.projects-thumbnail {
+  height: 100%;
+  max-width: 100%;
+}
+
 .footer {
   position: fixed;
   bottom: 0;
