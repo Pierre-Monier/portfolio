@@ -15,8 +15,6 @@ jobs:
       - name: Build
         run: |
           npm -v
-          npm install -g npm@7.20.5
-          npm -v
           npm i
           npm run build
 
