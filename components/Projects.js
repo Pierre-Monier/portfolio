@@ -1,5 +1,4 @@
 import { Tile } from "carbon-components-react";
-import Image from "next/image";
 
 const Projects = ({ projects }) => (
   <Tile className="content">
@@ -10,7 +9,7 @@ const Projects = ({ projects }) => (
           className="content-item projects-item"
           onClick={() => (window.location = project.link)}
         >
-          <Image
+          <img
             className="projects-thumbnail"
             src={project.thumbnail}
             width={640}

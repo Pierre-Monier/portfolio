@@ -1,12 +1,11 @@
-import { Tile } from "carbon-components-react";
-import Image from "next/image";
+import { Loading, Tile } from "carbon-components-react";
 
 const AboutMe = () => (
   <Tile className="content">
     <div className="tmp" />
     <div className="content-items justify-content-center">
       <div className="aboutme-item">
-        <Image width="300" height="300" src="/profile.jpeg" alt="profile" />
+        <img width="300" height="300" src="/profile.jpeg" alt="profile" />
       </div>
       <div className="aboutme-item">
         <p>

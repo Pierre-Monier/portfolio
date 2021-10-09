@@ -90,3 +90,7 @@ li {
 .justify-content-start {
   justify-content: start;
 }
+
+.disable {
+  cursor: not-allowed;
+}

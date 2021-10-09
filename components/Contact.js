@@ -6,35 +6,53 @@ import {
   Modal,
   Link,
 } from "carbon-components-react";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 const Contact = () => {
   const [email, setEmail] = useState({ isValid: true, value: "" });
   const [subject, setSubject] = useState({ isValid: true, value: "" });
-  const [emailBody, setEmailBody] = useState({ isValid: true, value: "" });
+  const [body, setBody] = useState({ isValid: true, value: "" });
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmiting, setIsSubmiting] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isEmailSendable, setIsEmailSendable] = useState(false);
 
-  const fieldChange = useCallback(
-    (newValue, setter) => {
-      if (newValue === "") {
-        setter({ isValid: false, value: newValue });
-      } else {
-        setter({ isValid: true, value: newValue });
-      }
-    },
-    [setEmail]
-  );
+  useEffect(() => {
+    setIsEmailSendable(Boolean(email.value && subject.value && body.value));
+  }, [email, subject, body]);
 
-  const sendEmail = useCallback(() => {
+  const updateField = useCallback((newValue, setter) => {
+    if (newValue === "") {
+      setter({ isValid: false, value: newValue });
+    } else {
+      setter({ isValid: true, value: newValue });
+    }
+  }, []);
+
+  const sendEmail = useCallback(async () => {
     setIsSubmiting(true);
-    setTimeout(() => {
-      console.log(email, subject, emailBody);
-      setIsSubmiting(false);
+
+    try {
+      const res = await fetch(
+        "https://europe-west3-portfolio-328219.cloudfunctions.net/email-delivery",
+        {
+          method: "POST",
+          body: {
+            email,
+            subject,
+            body,
+          },
+        }
+      );
+
       setIsOpen(true);
-    }, 1000);
-  }, [setIsSubmiting, setIsOpen, email, subject, emailBody]);
+    } catch (err) {
+      console.error(err);
+      setIsError(true);
+    }
+
+    setIsSubmiting(false);
+  }, [setIsSubmiting, setIsOpen, setIsError, email, subject, body]);
 
   const btnText = useMemo(
     () => (isSubmiting ? "..." : "Submit"),
@@ -70,7 +88,7 @@ const Contact = () => {
           </div>
           <div className="content-item contact-item contact-item-semi">
             <TextInput
-              onChange={(e) => fieldChange(e.currentTarget.value, setEmail)}
+              onChange={(e) => updateField(e.currentTarget.value, setEmail)}
               invalid={!email.isValid}
               placeholder="Email"
               hideLabel
@@ -80,7 +98,7 @@ const Contact = () => {
           </div>
           <div className="content-item contact-item contact-item-semi">
             <TextInput
-              onChange={(e) => fieldChange(e.currentTarget.value, setSubject)}
+              onChange={(e) => updateField(e.currentTarget.value, setSubject)}
               invalid={!subject.isValid}
               placeholder="Subject"
               hideLabel
@@ -90,8 +108,8 @@ const Contact = () => {
           </div>
           <div className="content-item contact-item contact-item-full">
             <TextArea
-              onChange={(e) => fieldChange(e.currentTarget.value, setEmailBody)}
-              invalid={!emailBody.isValid}
+              onChange={(e) => updateField(e.currentTarget.value, setBody)}
+              invalid={!body.isValid}
               placeholder={`Hi Pierre \n ...`}
               hideLabel
               labelText="Message"
@@ -99,7 +117,20 @@ const Contact = () => {
             />
           </div>
           <div className="content-item contact-item contact-item-full">
-            <Button onClick={() => sendEmail()}>{btnText}</Button>
+            <Button
+              className={isEmailSendable ? "" : "disable"}
+              onClick={() => {
+                if (isEmailSendable) {
+                  sendEmail();
+                } else {
+                  updateField(email.value, setEmail),
+                    updateField(subject.value, setSubject),
+                    updateField(body.value, setBody);
+                }
+              }}
+            >
+              {btnText}
+            </Button>
           </div>
         </div>
       </Tile>
