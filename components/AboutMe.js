@@ -5,7 +5,7 @@ const AboutMe = () => (
     <div className="tmp" />
     <div className="content-items justify-content-center">
       <div className="aboutme-item">
-        <img width="300" height="300" src="/profile.jpeg" alt="profile" />
+        <img width="300" height="300" src="./profile.jpeg" alt="profile" />
       </div>
       <div className="aboutme-item">
         <p>

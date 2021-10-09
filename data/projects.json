@@ -2,37 +2,37 @@
     "projects": [
         {
             "title": "Title",
-            "thumbnail": "/thumbnail.png",
+            "thumbnail": "./thumbnail.png",
             "detail": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
             "link": "https://github.com"
         },
         {
             "title": "Title",
-            "thumbnail": "/thumbnail.png",
+            "thumbnail": "./thumbnail.png",
             "detail": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
             "link": "https://github.com"
         },
         {
             "title": "Title",
-            "thumbnail": "/thumbnail.png",
+            "thumbnail": "./thumbnail.png",
             "detail": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
             "link": "https://github.com"
         },
         {
             "title": "Title",
-            "thumbnail": "/thumbnail.png",
+            "thumbnail": "./thumbnail.png",
             "detail": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
             "link": "https://github.com"
         },
         {
             "title": "Title",
-            "thumbnail": "/thumbnail.png",
+            "thumbnail": "./thumbnail.png",
             "detail": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
             "link": "https://github.com"
         },
         {
             "title": "Title",
-            "thumbnail": "/thumbnail.png",
+            "thumbnail": "./thumbnail.png",
             "detail": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
             "link": "https://github.com"
         }
