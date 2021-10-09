@@ -13,7 +13,10 @@ jobs:
           persist-credentials: false
 
       - name: Build
-        run: npm i && npm run build
+        run: |
+          npm install -g next@11.1.2
+          npm ci
+          npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.1
