@@ -37,20 +37,24 @@ const Contact = () => {
         "https://europe-west3-portfolio-328219.cloudfunctions.net/email-delivery",
         {
           method: "POST",
-          body: {
-            email,
-            subject,
-            body,
-          },
+          body: JSON.stringify({
+            Email: email.value,
+            Subject: subject.value,
+            Body: body.value,
+          }),
         }
       );
 
-      setIsOpen(true);
+      if (res.status !== 201) {
+        const errorMessage = await res.text();
+        throw Error(errorMessage);
+      }
     } catch (err) {
       console.error(err);
       setIsError(true);
     }
 
+    setIsOpen(true);
     setIsSubmiting(false);
   }, [setIsSubmiting, setIsOpen, setIsError, email, subject, body]);
 
