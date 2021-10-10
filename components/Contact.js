@@ -6,6 +6,7 @@ import {
   Modal,
   Link,
 } from "carbon-components-react";
+import { discordLink, keybaseLink } from "../utils/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 const Contact = () => {
@@ -79,13 +80,20 @@ const Contact = () => {
         passiveModal
         modalHeading={modalText}
       >
-        {isError ? <Link href="https://github.com">Toto</Link> : null}
+        {isError ? (
+          <Link href="https://github.com/Pierre-Monier/portfolio/issues/new">
+            Toto
+          </Link>
+        ) : null}
       </Modal>
 
       <Tile className="content">
         <div className="content-items justify-content-start">
           <div className="content-item contact-item contact-item-full">
-            <p>You can contact me on ... or on ...</p>
+            <p>
+              You can contact me on <Link href={keybaseLink}>Keybase</Link> or
+              on <Link href={discordLink}>Discord</Link>
+            </p>
           </div>
           <div className="content-item contact-item contact-item-full">
             <p>You can also send me an email with this form</p>

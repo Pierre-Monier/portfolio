@@ -40,6 +40,10 @@ li {
   cursor: pointer;
 }
 
+.projects-item h5 {
+  margin: 1em 0;
+}
+
 .projects-thumbnail {
   height: 100%;
   max-width: 100%;

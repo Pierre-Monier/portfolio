@@ -1,40 +1,64 @@
 {
     "projects": [
         {
-            "title": "Title",
-            "thumbnail": "./thumbnail.png",
-            "detail": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
-            "link": "https://github.com"
+            "title": "Flutter Twilio Programmable Voice",
+            "thumbnail": "./flutter_twilio.png",
+            "detail": "Non-official Flutter Twilio API for Twilio Programmable Voice Resource",
+            "link": "https://github.com/Bilik-fr/twilio_programmable_voice"
         },
         {
-            "title": "Title",
-            "thumbnail": "./thumbnail.png",
-            "detail": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
-            "link": "https://github.com"
+            "title": "React Prog Img",
+            "thumbnail": "./react-prog-img.png",
+            "detail": "React component to do smooth image loading. It can handle lazy loading too and auto detect the image size",
+            "link": "https://github.com/Pierre-Monier/react-prog-img"
         },
         {
-            "title": "Title",
-            "thumbnail": "./thumbnail.png",
-            "detail": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
-            "link": "https://github.com"
+            "title": "Manga Download",
+            "thumbnail": "./manga-download.jpg",
+            "detail": "I'm a member of the manga download organization. Mostly known for the HakuNeko app, I'm focussing on the HaruNeko app (the future version of HakuNeko)",
+            "link": "https://github.com/manga-download"
         },
         {
-            "title": "Title",
-            "thumbnail": "./thumbnail.png",
-            "detail": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
-            "link": "https://github.com"
+            "title": "Http Request Testing",
+            "thumbnail": "./http-request-testing.jpg",
+            "detail": "A Go program used to test HTTP request in end to end or functional tests",
+            "link": "https://github.com/Pierre-Monier/http_request_testing"
         },
         {
-            "title": "Title",
-            "thumbnail": "./thumbnail.png",
-            "detail": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
-            "link": "https://github.com"
+            "title": "Apod Wallpaper",
+            "thumbnail": "./apod-wallpaper.jpg",
+            "detail": "Scripte that allow you to set the actual APOD image as your wallpaper",
+            "link": "https://github.com/Pierre-Monier/apodWallpaper"
         },
         {
-            "title": "Title",
-            "thumbnail": "./thumbnail.png",
-            "detail": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
-            "link": "https://github.com"
+            "title": "Angular Pokemon Fight",
+            "thumbnail": "./pokemon-fight.jpg",
+            "detail": "An angular app made for a school project. You can create your own Pokémon and fight with them",
+            "link": "https://github.com/Pierre-Monier/angular-pokemon-fight"
+        },
+        {
+            "title": "Flappy Flame",
+            "thumbnail": "./flappy-flame.jpg",
+            "detail": "A flappy bird clone made with flame (a Flutter game engine).",
+            "link": "https://github.com/Pierre-Monier/angular-pokemon-fight"
+        },
+        {
+            "title": "Radio",
+            "thumbnail": "./radio.jpg",
+            "detail": "A go program to download and play in a terminal music files from my Dropbox account (yes it's more a mp3 player than a radio)",
+            "link": "https://github.com/Pierre-Monier/radio"
+        },
+        {
+            "title": "Angry Sharks",
+            "thumbnail": "./angry-sharks.png",
+            "detail": "A WebGL game where you try to survive to an assault of angry sharks",
+            "link": "https://github.com/Pierre-Monier/angry-sharks"
+        },
+        {
+            "title": "Space Invaders",
+            "thumbnail": "./space-invaders.jpg",
+            "detail": "A Space Invaders clone made with the Canvas API",
+            "link": "https://github.com/Pierre-Monier/SpaceInvader"
         }
     ]
 }

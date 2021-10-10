@@ -4,14 +4,10 @@ import {
   HeaderNavigation,
   HeaderMenuButton,
   HeaderMenuItem,
-  SkipToContent,
   SideNav,
-  HeaderGlobalBar,
-  HeaderGlobalAction,
   HeaderSideNavItems,
 } from "carbon-components-react";
-import { Awake24, Asleep24 } from "@carbon/icons-react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 
 const Menu = () => {
   useEffect(() => {
