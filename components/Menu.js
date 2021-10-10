@@ -14,16 +14,9 @@ import { Awake24, Asleep24 } from "@carbon/icons-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 const Menu = () => {
-  const [theme, setTheme] = useState("g90");
-
   useEffect(() => {
-    document.documentElement.setAttribute("theme", theme);
-  }, [theme]);
-
-  const toggleTheme = useCallback(
-    (currentTheme) => (currentTheme === "g90" ? "g10" : "g90"),
-    []
-  );
+    document.documentElement.setAttribute("theme", "g90");
+  }, []);
 
   const basePath = useMemo(
     () => (process.env.NODE_ENV === "production" ? "/portfolio" : ""),
@@ -52,14 +45,6 @@ const Menu = () => {
                 Contact
               </HeaderMenuItem>
             </HeaderNavigation>
-            <HeaderGlobalBar>
-              <HeaderGlobalAction
-                aria-label="theme switcher"
-                onClick={() => setTheme(toggleTheme(theme))}
-              >
-                {theme === "g90" ? <Awake24 /> : <Asleep24 />}
-              </HeaderGlobalAction>
-            </HeaderGlobalBar>
 
             <SideNav
               className="sidenav"

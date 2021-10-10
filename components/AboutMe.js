@@ -1,4 +1,4 @@
-import { Loading, Tile } from "carbon-components-react";
+import { Tile } from "carbon-components-react";
 
 const AboutMe = () => (
   <Tile className="content">

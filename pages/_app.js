@@ -1,6 +1,5 @@
 import "../styles/carbon.css";
 import "../styles/app.css";
-import "../styles/sidenav-hack.css";
 
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
