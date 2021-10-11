@@ -10,10 +10,11 @@ const AboutMe = () => (
       <div className="aboutme-item">
         <p>
           {" "}
-          Hi, I'm Pierre Monier. I'm a Software Developer from France 🇫🇷. I love
-          solving problems with code, I'm passionate about all kinds of computer
-          science 💻. Open-source enthusiast, I love working on projects with
-          peoples around the world. I'm also a running addict 🏃.{" "}
+          Hi, I&aposm Pierre Monier. I&aposm a Software Developer from France
+          🇫🇷. I love solving problems with code, I&aposm passionate about all
+          kinds of computer science 💻. Open-source enthusiast, I love working
+          on projects with peoples around the world. I&aposm also a running
+          addict 🏃.{" "}
         </p>
       </div>
     </div>
