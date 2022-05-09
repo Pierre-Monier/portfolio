@@ -1,2 +1,2 @@
 # portfolio
-I made a portfolio website, but after I realase that my GitHub profile was alreay a portfolio. So this project is kind of useless :/
+I made a portfolio website, but after I realised that my GitHub profile was already a portfolio. So this project is kind of useless :/
